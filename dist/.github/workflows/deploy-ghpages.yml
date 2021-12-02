@@ -1,0 +1,24 @@
+name: deploy ghpages
+on: 
+  push:
+    paths-ignore:
+      - README.md
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    name: deploy ghpages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+      - name: Install
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}

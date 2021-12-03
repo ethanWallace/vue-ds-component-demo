@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
-    <gc-ds-button label="Look at me"></gc-ds-button>
+    <gc-ds-button label="this button is in Vue"></gc-ds-button>
 
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
